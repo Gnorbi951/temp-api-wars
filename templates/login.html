@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% include 'header.html' %}
+    {% if session['username'] %}
+        You are logged in as {{ session['username']}}<br>
+    {% else %}
+        <div class="content-wrapper">
+        <div class="login_form login">
+            <p class="login_header">Log in</p>
+
+            <form method="post">
+            <label for="username">Username</label>
+            <input type=text id="username" name=username placeholder="Username" autocomplete="off"><br>
+            <label for="password">Password</label>
+            <input id="password" type=password name=password placeholder="Password"><br>
+            <input class="submit_btn" autocomplete="off" type=submit value=Login><br>
+
+            </form>
+        </div>
+        {{ message }}
+    {% endif %}
+    <br>
+    <a href="{{ url_for('main_page') }}">Back</a>
+    </div>
+
+{% endblock %}

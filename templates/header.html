@@ -1,0 +1,12 @@
+{% block content %}
+    <div class="header">
+        <a id="planet_list">Planet list</a><a id="vote">Voting statistics</a>
+        <a id="registration" href="/registration">Registration</a><a id="login" href="{{url_for('login')}}">Login</a>
+        <a id="logout" href="{{ url_for('logout') }}">Logout</a>
+        {% if session['username'] %}
+            <a id="status">signed in as {{ session['username'] }}</a>
+        {% else %}
+            <a id="status">You're not logged in</a>
+        {% endif %}
+    </div>
+{% endblock %}

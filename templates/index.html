@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% include 'header.html' %}
+    <h1 id="header"><b>Star Wars Universe Planets</b></h1>
+    <button class="btn" id="prev_btn">Previous</button><button class="btn" id="next_btn">Next</button><br>
+    <br>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Diameter</th>
+                <th>Climate</th>
+                <th>Terrain</th>
+                <th>Surface Water Percentage</th>
+                <th>Population</th>
+                <th>Residents</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for _ in range(0,10) %}
+                <tr>
+                    <td id="planet">Sample_planet</td>
+                    <td id="diameter">sample km</td>
+                    <td id="climate">sample climate</td>
+                    <td id="terrain">sample terrain</td>
+                    <td id="water">sample water%</td>
+                    <td id="population">sample population</td>
+                    <td id="resident">sample resident</td>
+                    <td><button class="btn" id="vote">Vote</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Residents of the Planet</h4>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Height</th>
+                    <th>Mass</th>
+                    <th>Hair Colour</th>
+                    <th>Skin Colour</th>
+                    <th>Eye Colour</th>
+                    <th>Birth year</th>
+                    <th>Gender</th>
+                </tr>
+                </thead>
+                <tbody class="modal_body">
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
