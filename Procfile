@@ -1,1 +1,1 @@
-web: gunicorn {server.py}:{server}
+web: gunicorn server.py:server
